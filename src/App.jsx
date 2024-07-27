@@ -2,9 +2,10 @@ import { useState } from 'react'
 import './App.css'
 import {useIsOnline} from './hooks/useIsOnline'
 import {useMousePointer} from './hooks/useMousePointer'
+import { useDimensions } from './hooks/useDimensions'
 function App() {
 
-  const isOnline = useIsOnline()
+  // const isOnline = useIsOnline()
 
   // if(isOnline){
   //   return "youre onlline"
@@ -14,15 +15,20 @@ function App() {
 
   // mouse pointer
 
-  const mousePointer = useMousePointer()
+  // const mousePointer = useMousePointer()
 
   
-  return(
-    <>
-        your mouse is at position {mousePointer.x} , { mousePointer.y} 
-    </>
-    )
+  // return(
+  //   <>
+  //       your mouse is at position {mousePointer.x} , { mousePointer.y} 
+  //   </>
+  //   )
   
+  const widthHeight = useDimensions()
+
+  return(<>
+    height is {widthHeight.h} , width is {widthHeight.w}
+  </>)
 }
 
 export default App
